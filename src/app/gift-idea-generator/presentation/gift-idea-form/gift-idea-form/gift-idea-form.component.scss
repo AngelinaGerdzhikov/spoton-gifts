@@ -61,3 +61,7 @@
 select.form-control, textarea.form-control {
     padding: 0.7rem 0.8rem;
 }
+
+.asterix {
+    color: vars.$error-color;
+}
