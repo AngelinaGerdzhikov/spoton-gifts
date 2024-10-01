@@ -1,13 +1,15 @@
-import { ChangeDetectionStrategy, Component, computed, input, output, signal } from '@angular/core';
-import { GiftIdeaInput } from '../../../core/models/gift-idea-input';
+import { Component, input, output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { ButtonComponent } from '../../../../ui/components/button/button.component';
-import { JsonPipe } from '@angular/common';
+import { GiftIdeaInput } from '../../../core/models/gift-idea-input';
+import { ButtonComponent } from '@ui/components/button/button.component';
 
 @Component({
   selector: 'sg-gift-idea-form',
   standalone: true,
-  imports: [FormsModule, ButtonComponent, JsonPipe],
+  imports: [
+    FormsModule,
+    ButtonComponent
+  ],
   templateUrl: './gift-idea-form.component.html',
   styleUrl: './gift-idea-form.component.scss'
 })

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { GiftIdeaList } from '../../../core/models/gift-idea-list';
-import { SectionComponent } from '../../../../ui/components/section/section/section.component';
 import { GiftIdeaListComponent } from '../../gift-idea-list/gift-idea-list/gift-idea-list.component';
+import { SectionComponent } from '@ui/components/section/section/section.component';
 
 @Component({
   selector: 'sg-gift-idea-results',
