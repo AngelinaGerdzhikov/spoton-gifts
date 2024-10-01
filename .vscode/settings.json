@@ -1,0 +1,9 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  "editor.formatOnSave": false,
+  "editor.lineNumbers": "on",
+  "editor.trimAutoWhitespace": true,
+  "editor.tabSize": 2
+}

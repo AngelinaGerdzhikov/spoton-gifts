@@ -1,13 +1,15 @@
-import { ChangeDetectionStrategy, Component, computed, input, output, signal } from '@angular/core';
-import { GiftIdeaInput } from '../../../core/models/gift-idea-input';
+import { Component, computed, input, output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { ButtonComponent } from '../../../../ui/components/button/button.component';
-import { JsonPipe } from '@angular/common';
+import { ButtonComponent } from '@ui/components/button/button.component';
+import { GiftIdeaInput } from '../../../core/models/gift-idea-input';
 
 @Component({
   selector: 'sg-gift-idea-form',
   standalone: true,
-  imports: [FormsModule, ButtonComponent, JsonPipe],
+  imports: [
+    FormsModule,
+    ButtonComponent
+  ],
   templateUrl: './gift-idea-form.component.html',
   styleUrl: './gift-idea-form.component.scss'
 })
@@ -15,12 +17,17 @@ export class GiftIdeaFormComponent {
   giftIdeaInput = input<GiftIdeaInput | null>(null);
   loading = input<boolean>(false);
   onFormSubmit = output<GiftIdeaInput>();
-  
+
+  submitBtnText = computed(() => {
+    return this.loading() ? 'Generating Ideas...' : 'Discover Gifts';
+  });
+
+  protected model = { ...this.giftIdeaInput() };
+
   genderOptions = [
-    {id: 'female', label: 'Female'},
-    {id: 'male', label: 'Male'}
+    { id: 'female', label: 'Female' },
+    { id: 'male', label: 'Male' }
   ];
-  protected model = {...this.giftIdeaInput()}; 
 
   onSubmit(form: NgForm) {
     this.onFormSubmit.emit(form.value as GiftIdeaInput);

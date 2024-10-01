@@ -20,5 +20,5 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 export class ButtonComponent {
   position = input<'left' | 'center' | 'right'>('left');
   width = input<'full' | 'fixed' | 'auto'>('auto');
-  onClick = output(); 
+  onClick = output();
 }

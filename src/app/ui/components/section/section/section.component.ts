@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { HeadingTagComponent } from "../../heading-tag/heading-tag/heading-tag.component";
-import { HeadingTagLevel } from '../../heading-tag/heading-tag/heading-tag-level';
 import { NgClass } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { HeadingTagLevel } from '../../heading-tag/heading-tag/heading-tag-level';
+import { HeadingTagComponent } from "../../heading-tag/heading-tag/heading-tag.component";
 
 @Component({
   selector: 'sg-section',

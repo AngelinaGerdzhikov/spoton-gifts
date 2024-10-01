@@ -1,6 +1,6 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { HeadingTagLevel } from './heading-tag-level';
-import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'sg-heading-tag',

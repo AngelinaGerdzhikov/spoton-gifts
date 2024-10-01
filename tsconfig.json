@@ -22,7 +22,12 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@gift-idea-generator/*": ["./src/app/gift-idea-generator/*"],
+      "@layout/*": ["./src/app/layout/*"],
+      "@ui/*": ["./src/app/ui/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -35,5 +35,5 @@
         <label for="personality">Personality</label>
         <textarea class="form-control" required id="personality" name="personality" [(ngModel)]="model.personality" placeholder="Quiet person who appreciates sentimental gifts" rows="3"></textarea>
     </div>
-    <button sgCta [position]="'center'" type="submit" [width]="'full'" [disabled]="!giftIdeaForm?.form?.valid || loading()" >{{loading() ? 'Generating Ideas...' : 'Discover Gifts'}}</button>
+    <button sgCta [position]="'center'" type="submit" [width]="'full'" [disabled]="!giftIdeaForm?.form?.valid || loading()" >{{submitBtnText()}}</button>
 </form>

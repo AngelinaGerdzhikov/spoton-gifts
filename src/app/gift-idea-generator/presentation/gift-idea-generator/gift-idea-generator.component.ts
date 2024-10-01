@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BackgroundImageWithOverlay } from '../../../ui/directives/background-image-with-overlay/background-image-with-overlay.directive';
-import { SectionComponent } from "../../../ui/components/section/section/section.component";
-import { GiftIdeaFormComponent } from "../gift-idea-form/gift-idea-form/gift-idea-form.component";
+import { SectionComponent } from '@ui/components/section/section/section.component';
+import { BackgroundImageWithOverlay } from '@ui/directives/background-image-with-overlay/background-image-with-overlay.directive';
+import { GiftIdeaFormComponent } from '../gift-idea-form/gift-idea-form/gift-idea-form.component';
 
 @Component({
   selector: 'sg-gift-idea-generator',
@@ -15,4 +15,4 @@ import { GiftIdeaFormComponent } from "../gift-idea-form/gift-idea-form/gift-ide
   styleUrl: './gift-idea-generator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GiftIdeaGeneratorComponent {}
+export class GiftIdeaGeneratorComponent { }
