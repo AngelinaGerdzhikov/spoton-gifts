@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'vars';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+body,
+input,
+select,
+textarea,
+button {
+    padding: 0;
+    margin: 0;
+    font-family: vars.$body-font-family;
+    font-weight: 300;
+    color: vars.$text-color;
+    font-size: 17px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: vars.$heading-font-family;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+    color: vars.$heading-color;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1rem;
+    font-style: italic;
+}

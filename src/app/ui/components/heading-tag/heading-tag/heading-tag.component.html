@@ -1,0 +1,17 @@
+@if (headingLevel() === 'h1') {
+    <h1><ng-container *ngTemplateOutlet="projected" /></h1>
+} @else if (headingLevel() === 'h2') {
+    <h2><ng-container *ngTemplateOutlet="projected" /></h2>
+} @else if (headingLevel() === 'h3') {
+    <h3><ng-container *ngTemplateOutlet="projected" /></h3>
+} @else if (headingLevel() === 'h4') {
+    <h4><ng-container *ngTemplateOutlet="projected" /></h4>
+} @else if (headingLevel() === 'h5') {
+    <h5><ng-container *ngTemplateOutlet="projected" /></h5>
+} @else {
+    <h6><ng-container *ngTemplateOutlet="projected" /></h6>
+}
+
+<ng-template #projected>
+    <ng-content/>
+</ng-template>

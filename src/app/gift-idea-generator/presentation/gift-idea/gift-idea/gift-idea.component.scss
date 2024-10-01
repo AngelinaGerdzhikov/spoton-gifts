@@ -1,0 +1,15 @@
+:host {
+    flex-basis: calc(30% - 1rem);
+    min-width: 300px;
+}
+
+@media (max-width: 1200px) {
+    :host {
+        flex-basis:  calc(50% - 1rem);
+    }
+  }
+@media (max-width: 800px) {
+    :host {
+        flex-basis:  100%;
+    }
+  }

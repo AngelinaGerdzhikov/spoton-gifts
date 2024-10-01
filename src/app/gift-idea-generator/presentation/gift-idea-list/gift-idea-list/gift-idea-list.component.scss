@@ -1,0 +1,12 @@
+.wrapper {
+    margin-bottom: 4rem;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    gap: 2rem;
+    flex-wrap: wrap;
+}

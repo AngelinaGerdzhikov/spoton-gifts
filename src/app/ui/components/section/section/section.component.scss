@@ -1,0 +1,43 @@
+@use '../../../../../vars';
+
+.wrapper {
+    padding: vars.$section-padding;
+    display: flex;
+    flex-direction: column;
+   
+    &.center {
+        align-items: center;
+        text-align: center;
+
+        .header-wrapper {
+            max-width: vars.$centered-title-section-max-width;
+        }
+    }
+}
+
+.header-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.full {
+    flex-grow: 1;
+}
+
+.contained > * {
+    flex-grow: 1;
+    max-width: vars.$contained-section-with;
+}
+
+.box > * {
+    flex-grow: 1;
+    max-width: vars.$box-section-with;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 0;
+    color: vars.$subheading-color;
+}

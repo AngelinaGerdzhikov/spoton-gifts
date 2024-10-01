@@ -1,0 +1,43 @@
+@use '../../../../vars';
+
+:host {
+    margin: 1.5rem 0 1.5rem auto;
+    padding: 0.5rem 1rem;
+    line-height: 1.8;
+    cursor: pointer;
+    background: vars.$button-bg;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    color: white;
+    font-size: 1.125rem;
+
+    &.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.right {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    &.full {
+        width: 100%;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: vars.$button-active-bg;
+        box-shadow: vars.$button-active-box-shadow;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}

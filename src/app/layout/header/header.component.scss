@@ -1,0 +1,14 @@
+@use '../../../vars';
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 1.5rem;
+    border-bottom: 1px solid vars.$border-color;
+}
+
+img {
+    max-width: 200px;
+}

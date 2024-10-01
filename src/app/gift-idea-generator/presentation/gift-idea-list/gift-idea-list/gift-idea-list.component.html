@@ -1,0 +1,9 @@
+<section class="wrapper">
+    <h2>{{list().title}}</h2>
+    <p>{{list().description}}</p>
+    <ul>
+        @for (idea of list().giftIdeas; let index = $index; track index) {
+            <sg-gift-idea [giftIdea]="idea" [index]="index"/>
+        }
+    </ul>
+</section>
