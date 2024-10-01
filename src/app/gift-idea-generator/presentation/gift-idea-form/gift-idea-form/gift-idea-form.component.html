@@ -1,0 +1,39 @@
+<form #giftIdeaForm="ngForm" (ngSubmit)="onSubmit(giftIdeaForm)">
+    <div class="row">
+        <div class="form-field">
+            <label for="occasion">Occasion</label>
+            <input class="form-control" required id="occasion" name="occasion" [(ngModel)]="model.occasion" type="text" placeholder="Mother's Day"/>
+        </div>
+        <div class="form-field">
+            <label for="relationship">Relationship</label>
+            <input class="form-control" required id="relationship" name="relationship" [(ngModel)]="model.relationship" type="text" placeholder="Mother"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-field">
+            <label for="gender">Gender</label>
+            <select class="form-control" required id="gender" name="gender" [(ngModel)]="model.gender" placeholder="What is their gender">
+                @for(gender of genderOptions; track gender.id) {
+                    <option [value]="gender.id">{{gender.label}}</option>
+                }
+            </select>
+        </div>
+        <div class="form-field">
+            <label for="age">Age</label>
+            <input class="form-control" required id="age" name="age" [(ngModel)]="model.age" label="Age" type="number" placeholder="Age"/>
+        </div>
+        <div class="form-field">
+            <label for="career">Career</label>
+            <input class="form-control" required id="career" name="career" [(ngModel)]="model.career" label="Career" type="text" placeholder="Nurse Practitioner"/>
+        </div>
+    </div>
+    <div class="form-field">
+        <label for="hobby">Hobbies & Interests</label>
+        <input class="form-control" required id="hobby" name="hobby" [(ngModel)]="model.hobby" type="text" placeholder="Baking, Drawing with watercolor"/>
+    </div>
+    <div class="form-field">
+        <label for="personality">Personality</label>
+        <textarea class="form-control" required id="personality" name="personality" [(ngModel)]="model.personality" placeholder="Quiet person who appreciates sentimental gifts" rows="3"></textarea>
+    </div>
+    <button sgCta [position]="'center'" type="submit" [width]="'full'" [disabled]="!giftIdeaForm?.form?.valid || loading()" >{{loading() ? 'Generating Ideas...' : 'Discover Gifts'}}</button>
+</form>

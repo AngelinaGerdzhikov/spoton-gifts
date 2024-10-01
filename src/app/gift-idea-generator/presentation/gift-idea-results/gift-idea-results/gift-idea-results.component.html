@@ -1,0 +1,11 @@
+<sg-section [position]="position()" width="contained">
+    @if (giftIdeaResults() && giftIdeaResults().length > 0 && !loading()) {
+        @for (list of giftIdeaResults(); track list.title) {
+            <sg-gift-idea-list [list]="list" />
+        }
+    } @else if (loading()) {
+        <p> Coming up with ideas...</p>
+    } @else {
+        <p>Please fill in the form to discover gift ideas.</p>
+    }
+</sg-section>

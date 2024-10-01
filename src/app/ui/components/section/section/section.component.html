@@ -1,0 +1,14 @@
+<section class="wrapper" [ngClass]="wrapperClasses()">
+    @if (title()) {
+        <header class="header-wrapper">
+            @if (subtitle()) {
+                <h4 class="subtitle">{{subtitle()}}</h4>
+            }
+            <sg-heading-tag [headingLevel]="headingLevel()">{{title()}}</sg-heading-tag>
+            <ng-content select="header-body"></ng-content>
+        </header>
+    }
+    <article class="body-wrapper">
+        <ng-content></ng-content>
+    </article>
+</section>
