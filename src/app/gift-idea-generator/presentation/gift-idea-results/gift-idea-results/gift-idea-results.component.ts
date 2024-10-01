@@ -17,11 +17,16 @@ import { SectionComponent } from '@ui/components/section/section/section.compone
 export class GiftIdeaResultsComponent {
   loading = input<boolean>(false);
   giftIdeaResults = input<GiftIdeaList[]>([]);
+
   position = computed(() => {
     if (this.loading() || this.giftIdeaResults().length === 0) {
       return 'center'
     } else {
       return 'left'
     }
-  })
+  });
+
+  showGiftIdeas = computed(() => {
+    return this.giftIdeaResults()?.length > 0 && !this.loading()
+});
 }

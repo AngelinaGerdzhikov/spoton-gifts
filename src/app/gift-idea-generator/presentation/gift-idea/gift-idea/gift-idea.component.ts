@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { GiftIdea } from '../../../core/models/gift-idea';
 
 @Component({
@@ -12,4 +12,5 @@ import { GiftIdea } from '../../../core/models/gift-idea';
 export class GiftIdeaComponent {
   giftIdea = input.required<GiftIdea>();
   index = input.required<number>();
+  displayNumber = computed(() => this.index() + 1);
 }

@@ -1,5 +1,5 @@
 <sg-section [position]="position()" width="contained">
-    @if (giftIdeaResults() && giftIdeaResults().length > 0 && !loading()) {
+    @if (showGiftIdeas()) {
         @for (list of giftIdeaResults(); track list.title) {
             <sg-gift-idea-list [list]="list" />
         }

@@ -12,7 +12,6 @@ import { HeaderComponent } from '@layout/header/header.component';
     FooterComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {}
