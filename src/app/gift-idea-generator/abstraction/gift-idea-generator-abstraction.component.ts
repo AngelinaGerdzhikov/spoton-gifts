@@ -1,6 +1,6 @@
 import { GiftIdeaFormComponent } from './../presentation/gift-idea-form/gift-idea-form/gift-idea-form.component';
 import { GiftIdeaGeneratorService } from './../core/gift-idea-generator.service';
-import { Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { GiftIdeaGeneratorComponent } from "../presentation/gift-idea-generator/gift-idea-generator.component";
 import { GiftIdeaInput } from '../core/models/gift-idea-input';
 import { GiftIdeaResultsComponent } from '../presentation/gift-idea-results/gift-idea-results/gift-idea-results.component';
@@ -14,6 +14,7 @@ import { GiftIdeaResultsComponent } from '../presentation/gift-idea-results/gift
       GiftIdeaResultsComponent
     ],
     templateUrl: './gift-idea-generator-abstraction.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GiftIdeaGeneratorAbstractionComponent {
   giftIdeaService = inject<GiftIdeaGeneratorService>(GiftIdeaGeneratorService);

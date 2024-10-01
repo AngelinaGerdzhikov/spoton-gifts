@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { GiftIdea } from '../../../core/models/gift-idea';
 
 @Component({
@@ -6,7 +6,8 @@ import { GiftIdea } from '../../../core/models/gift-idea';
   standalone: true,
   imports: [],
   templateUrl: './gift-idea.component.html',
-  styleUrl: './gift-idea.component.scss'
+  styleUrl: './gift-idea.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GiftIdeaComponent {
   giftIdea = input.required<GiftIdea>();

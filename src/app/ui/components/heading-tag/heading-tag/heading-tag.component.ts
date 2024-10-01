@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { HeadingTagLevel } from './heading-tag-level';
 import { NgTemplateOutlet } from '@angular/common';
 
@@ -7,7 +7,8 @@ import { NgTemplateOutlet } from '@angular/common';
   standalone: true,
   imports: [NgTemplateOutlet],
   templateUrl: './heading-tag.component.html',
-  styleUrl: './heading-tag.component.scss'
+  styleUrl: './heading-tag.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeadingTagComponent {
   headingLevel = input<HeadingTagLevel>('h1');

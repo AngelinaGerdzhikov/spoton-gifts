@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { GiftIdeaList } from '../../../core/models/gift-idea-list';
 import { SectionComponent } from '../../../../ui/components/section/section/section.component';
 import { GiftIdeaListComponent } from '../../gift-idea-list/gift-idea-list/gift-idea-list.component';
@@ -11,7 +11,8 @@ import { GiftIdeaListComponent } from '../../gift-idea-list/gift-idea-list/gift-
     GiftIdeaListComponent
   ],
   templateUrl: './gift-idea-results.component.html',
-  styleUrl: './gift-idea-results.component.scss'
+  styleUrl: './gift-idea-results.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GiftIdeaResultsComponent {
   loading = input<boolean>(false);

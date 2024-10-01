@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'button[sgCta]',
@@ -14,7 +14,8 @@ import { Component, input, output } from '@angular/core';
     '[class.full]': 'width() === "full"',
     '[class.fixed]': 'width() === "fixed"',
     '[class.auto]': 'width() === "auto"',
-  }
+  },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
   position = input<'left' | 'center' | 'right'>('left');
