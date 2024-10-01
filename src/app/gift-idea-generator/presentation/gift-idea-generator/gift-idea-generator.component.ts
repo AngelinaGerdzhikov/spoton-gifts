@@ -15,4 +15,4 @@ import { GiftIdeaFormComponent } from '../gift-idea-form/gift-idea-form/gift-ide
   styleUrl: './gift-idea-generator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GiftIdeaGeneratorComponent {}
+export class GiftIdeaGeneratorComponent { }

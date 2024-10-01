@@ -14,4 +14,4 @@ import { HeaderComponent } from '@layout/header/header.component';
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {}
+export class AppComponent { }

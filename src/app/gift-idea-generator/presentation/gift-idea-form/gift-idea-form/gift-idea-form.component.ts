@@ -1,7 +1,7 @@
 import { Component, computed, input, output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { GiftIdeaInput } from '../../../core/models/gift-idea-input';
 import { ButtonComponent } from '@ui/components/button/button.component';
+import { GiftIdeaInput } from '../../../core/models/gift-idea-input';
 
 @Component({
   selector: 'sg-gift-idea-form',
@@ -21,12 +21,12 @@ export class GiftIdeaFormComponent {
   submitBtnText = computed(() => {
     return this.loading() ? 'Generating Ideas...' : 'Discover Gifts';
   });
-  
-  protected model = {...this.giftIdeaInput()}; 
-  
+
+  protected model = { ...this.giftIdeaInput() };
+
   genderOptions = [
-    {id: 'female', label: 'Female'},
-    {id: 'male', label: 'Male'}
+    { id: 'female', label: 'Female' },
+    { id: 'male', label: 'Male' }
   ];
 
   onSubmit(form: NgForm) {
