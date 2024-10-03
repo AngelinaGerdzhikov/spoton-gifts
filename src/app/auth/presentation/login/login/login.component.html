@@ -1,0 +1,51 @@
+<sg-section title="Login" headingLevel="h1" subtitle="Welcome back" position="center" width="box">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="form-field">
+          <label for="user">
+              Username
+              <span class="asterix">*</span>
+          </label>
+          <input
+              class="form-control"
+              required
+              id="user"
+              name="user"
+              #userInput="ngModel"
+              [(ngModel)]="user"
+              type="text"
+              placeholder="Username"/>
+          <sg-form-control-error
+              [model]="userInput"
+              [dirty]="!!userInput.dirty"
+              [touched]="!!userInput.touched"/>
+      </div>
+      <div class="form-field">
+          <label for="password">
+              Password
+              <span class="asterix">*</span>
+          </label>
+          <input
+              class="form-control"
+              required
+              id="password"
+              name="password"
+              #passwordInput="ngModel"
+              [(ngModel)]="password"
+              type="password"
+              placeholder="Password"/>
+          <sg-form-control-error
+              [model]="userInput"
+              [dirty]="!!userInput.dirty"
+              [touched]="!!userInput.touched"/>
+      </div>
+      <button
+          sgCta
+          [position]="'center'"
+          type="submit"
+          [width]="'full'"
+          [disabled]="!loginForm?.form?.valid"
+      >
+          {{ submitBtnText() }}
+      </button>
+  </form>
+</sg-section>
