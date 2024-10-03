@@ -2,10 +2,10 @@
 
 :host {
     width: 100%;
+    height: vars.$footer-height;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0 1.5rem;
     border-top: 1px solid vars.$border-color;
     background: vars.$dark-background;
 }

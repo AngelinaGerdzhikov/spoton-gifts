@@ -1,0 +1,5 @@
+@use 'vars';
+
+main {
+  height: vars.$viewport-height;
+}

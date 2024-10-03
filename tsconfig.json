@@ -24,6 +24,7 @@
       "dom"
     ],
     "paths": {
+      "@auth/*": ["./src/app/auth/*"],
       "@gift-idea-generator/*": ["./src/app/gift-idea-generator/*"],
       "@layout/*": ["./src/app/layout/*"],
       "@ui/*": ["./src/app/ui/*"]
