@@ -1,39 +1,154 @@
 <form #giftIdeaForm="ngForm" (ngSubmit)="onSubmit(giftIdeaForm)">
     <div class="row">
         <div class="form-field">
-            <label for="occasion">Occasion</label>
-            <input class="form-control" required id="occasion" name="occasion" [(ngModel)]="model.occasion" type="text" placeholder="Mother's Day"/>
+            <label for="occasion">
+                Occasion
+                <span class="asterix">*</span>
+            </label>
+            <input
+                class="form-control"
+                required
+                id="occasion"
+                name="occasion"
+                #occasion="ngModel"
+                [(ngModel)]="model.occasion"
+                type="text"
+                placeholder="Mother's Day"/>
+            <sg-form-control-error
+                [model]="occasion"
+                [dirty]="!!occasion.dirty"
+                [touched]="!!occasion.touched"/>
         </div>
         <div class="form-field">
-            <label for="relationship">Relationship</label>
-            <input class="form-control" required id="relationship" name="relationship" [(ngModel)]="model.relationship" type="text" placeholder="Mother"/>
+            <label for="relationship">
+                Relationship
+                <span class="asterix">*</span>
+            </label>
+            <input
+                class="form-control"
+                required
+                id="relationship"
+                name="relationship"
+                #relationship="ngModel"
+                [(ngModel)]="model.relationship"
+                type="text"
+                placeholder="Mother"/>
+            <sg-form-control-error
+                [model]="relationship"
+                [dirty]="!!relationship.dirty"
+                [touched]="!!relationship.touched"/>
         </div>
     </div>
     <div class="row">
         <div class="form-field">
-            <label for="gender">Gender</label>
-            <select class="form-control" required id="gender" name="gender" [(ngModel)]="model.gender" placeholder="What is their gender">
+            <label for="gender">
+                Gender
+                <span class="asterix">*</span>
+            </label>
+            <select
+                class="form-control"
+                required
+                id="gender"
+                name="gender"
+                #gender="ngModel"
+                [(ngModel)]="model.gender"
+                placeholder="What is their gender"
+            >
                 @for(gender of genderOptions; track gender.id) {
                     <option [value]="gender.id">{{gender.label}}</option>
                 }
             </select>
+            <sg-form-control-error
+                [model]="gender"
+                [dirty]="!!gender.dirty"
+                [touched]="!!gender.touched"/>
         </div>
         <div class="form-field">
-            <label for="age">Age</label>
-            <input class="form-control" required id="age" name="age" [(ngModel)]="model.age" label="Age" type="number" placeholder="Age"/>
+            <label for="age">
+                Age
+                <span class="asterix">*</span>
+            </label>
+            <input
+                class="form-control"
+                required
+                id="age"
+                name="age"
+                #age="ngModel"
+                [(ngModel)]="model.age"
+                label="Age"
+                type="number"
+                placeholder="Age"/>
+            <sg-form-control-error
+                [model]="age"
+                [dirty]="!!age.dirty"
+                [touched]="!!age.touched"/>
         </div>
         <div class="form-field">
-            <label for="career">Career</label>
-            <input class="form-control" required id="career" name="career" [(ngModel)]="model.career" label="Career" type="text" placeholder="Nurse Practitioner"/>
+            <label for="career">
+                Career
+                <span class="asterix">*</span>
+            </label>
+            <input
+                class="form-control"
+                required
+                id="career"
+                name="career"
+                #career="ngModel"
+                [(ngModel)]="model.career"
+                label="Career"
+                type="text"
+                placeholder="Nurse Practitioner"/>
+            <sg-form-control-error
+                [model]="career"
+                [dirty]="!!career.dirty"
+                [touched]="!!career.touched"/>
         </div>
     </div>
     <div class="form-field">
-        <label for="hobby">Hobbies & Interests</label>
-        <input class="form-control" required id="hobby" name="hobby" [(ngModel)]="model.hobby" type="text" placeholder="Baking, Drawing with watercolor"/>
+        <label for="hobby">
+            Hobbies & Interests
+            <span class="asterix">*</span>
+        </label>
+        <input
+            class="form-control"
+            required
+            id="hobby"
+            name="hobby"
+            #hobby="ngModel"
+            [(ngModel)]="model.hobby"
+            type="text"
+            placeholder="Baking, Drawing with watercolor"/>
+        <sg-form-control-error
+                [model]="hobby"
+                [dirty]="!!hobby.dirty"
+                [touched]="!!hobby.touched"/>
     </div>
     <div class="form-field">
-        <label for="personality">Personality</label>
-        <textarea class="form-control" required id="personality" name="personality" [(ngModel)]="model.personality" placeholder="Quiet person who appreciates sentimental gifts" rows="3"></textarea>
+        <label for="personality">
+            Personality
+            <span class="asterix">*</span>
+        </label>
+        <textarea
+            class="form-control"
+            required
+            id="personality"
+            name="personality"
+            #personality="ngModel"
+            [(ngModel)]="model.personality"
+            placeholder="Quiet person who appreciates sentimental gifts"
+            rows="3"></textarea>
+        <sg-form-control-error
+                [model]="personality"
+                [dirty]="!!personality.dirty"
+                [touched]="!!personality.touched"/>
     </div>
-    <button sgCta [position]="'center'" type="submit" [width]="'full'" [disabled]="!giftIdeaForm?.form?.valid || loading()" >{{submitBtnText()}}</button>
+    <button
+        sgCta
+        [position]="'center'"
+        type="submit"
+        [width]="'full'"
+        [disabled]="!giftIdeaForm?.form?.valid || loading()"
+    >
+        {{submitBtnText()}}
+    </button>
 </form>
