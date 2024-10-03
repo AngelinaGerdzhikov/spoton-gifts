@@ -1,6 +1,7 @@
 import { Component, computed, input, output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ButtonComponent } from '@ui/components/button/button.component';
+import { FormControlErrorComponent } from '@ui/components/form-control-error/form-control-error/form-control-error.component';
 import { GiftIdeaInput } from '../../../core/models/gift-idea-input';
 
 @Component({
@@ -8,7 +9,8 @@ import { GiftIdeaInput } from '../../../core/models/gift-idea-input';
   standalone: true,
   imports: [
     FormsModule,
-    ButtonComponent
+    ButtonComponent,
+    FormControlErrorComponent
   ],
   templateUrl: './gift-idea-form.component.html',
   styleUrl: './gift-idea-form.component.scss'

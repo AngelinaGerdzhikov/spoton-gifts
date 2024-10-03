@@ -1,0 +1,3 @@
+@if (displayError()) {
+  <p *ngIf="hasRequiredError()" class="error">* {{model().name | titlecase }} is required.</p>
+}
