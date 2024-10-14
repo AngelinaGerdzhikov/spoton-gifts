@@ -1,8 +1,8 @@
 import { Injectable, computed, signal } from "@angular/core";
+import { environment } from "@env/environment";
+import { BehaviorSubject } from "rxjs";
 import { GiftIdeaInput } from "./models/gift-idea-input";
 import { GiftIdeaList } from "./models/gift-idea-list";
-import { GIFT_IDEAS_LISTS } from './data';
-import { BehaviorSubject } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -21,18 +21,35 @@ export class GiftIdeaGeneratorService {
     private giftIdeaInputSubscription(): void {
         this.#giftIdeaInput.subscribe((input) => { 
             if (input) {
-                this.fetchIdeas();
+                this.fetchIdeas(input);
             }
         })
     }
 
-    private fetchIdeas(): void {
+    private async fetchIdeas(input: GiftIdeaInput) {
+       const url = `${environment.apiUrl}/generateGiftIdeas`;
        this.#loading.set(true);
 
-       setTimeout(() => {
-        this.#giftIdeaResults.set(GIFT_IDEAS_LISTS);
+       try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+              },
+            body: JSON.stringify({ input }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const res = await response.json();
+        this.#giftIdeaResults.set(res.content);
         this.#loading.set(false)
-       }, 1000);
+        console.log(res);
+        } catch (error: any) {
+            console.error(error);
+        }
     }
 
 
