@@ -1,8 +1,9 @@
 <sg-gift-idea-generator>
     <sg-gift-idea-form 
         [loading]="loading()"
-        (onFormSubmit)="handleGiftIdeaInputSubmitted($event)"/>
+        (onFormSubmit)="handleGiftIdeaInputSubmitted($event)"
+        [errorMessage]="errorMessage()"/>
 </sg-gift-idea-generator>
 <sg-gift-idea-results
     [loading]="loading()"
-    [giftIdeaResults]="giftIdeaResults()" />
+    [giftIdeaResults]="giftIdeaResults()"/>

@@ -142,6 +142,7 @@
                 [dirty]="!!personality.dirty"
                 [touched]="!!personality.touched"/>
     </div>
+    <sg-error-message [errorMessage]="errorMessage()"/>
     <button
         sgCta
         [position]="'center'"

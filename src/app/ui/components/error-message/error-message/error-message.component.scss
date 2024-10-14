@@ -1,0 +1,7 @@
+@use 'vars';
+
+.error-message {
+  color: vars.$error-color;
+  font-style: italic;
+  font-size: vars.$error-message-font-size;
+}
