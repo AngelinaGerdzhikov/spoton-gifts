@@ -29,10 +29,6 @@ export class LoginComponent {
   });
 
   onSubmit(form: NgForm): void {
-    console.log(`
-      user: ${this.user},
-      password: ${this.password}  
-    `);
     this.onLogin.emit(form.value);
   }
 
