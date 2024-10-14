@@ -1,6 +1,7 @@
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable, computed, signal } from "@angular/core";
 import { environment } from "@env/environment";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { GiftIdeaInput } from "./models/gift-idea-input";
 import { GiftIdeaList } from "./models/gift-idea-list";
 
@@ -13,43 +14,40 @@ export class GiftIdeaGeneratorService {
     loading = computed(this.#loading);
     #giftIdeaResults = signal<GiftIdeaList[]>([]);
     giftIdeaResults = computed(this.#giftIdeaResults);
+    #errorMessage = signal<string | null>(null);
+    errorMessage = computed(this.#errorMessage);
 
-    constructor() {
+    constructor(private http: HttpClient) {
         this.giftIdeaInputSubscription();
     }
 
     private giftIdeaInputSubscription(): void {
         this.#giftIdeaInput.subscribe((input) => { 
             if (input) {
-                this.fetchIdeas(input);
+                this.fetchIdeasSubscription(input);
             }
         })
     }
 
-    private async fetchIdeas(input: GiftIdeaInput) {
-       const url = `${environment.apiUrl}/generateGiftIdeas`;
-       this.#loading.set(true);
+    private fetchIdeasObservable(input: GiftIdeaInput): Observable<{content: GiftIdeaList[] }> {
+        return this.http.post<{content: GiftIdeaList[] }>(`${environment.apiUrl}/generateGiftIdeas`, { input });
+    }
 
-       try {
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-              },
-            body: JSON.stringify({ input }),
-        });
-
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-        }
-
-        const res = await response.json();
-        this.#giftIdeaResults.set(res.content);
-        this.#loading.set(false)
-        console.log(res);
-        } catch (error: any) {
-            console.error(error);
-        }
+    private fetchIdeasSubscription(input: GiftIdeaInput) {
+        this.#loading.set(true);
+        this.#errorMessage.set(null);
+        this.fetchIdeasObservable(input).subscribe({
+            next: (res) => {
+                if (res) {
+                    this.#giftIdeaResults.set(res.content);
+                    this.#loading.set(false)
+                }
+            },
+            error: (err: HttpErrorResponse) => {
+                this.#errorMessage.set(err.error.error.message);
+                this.#loading.set(false);
+            }
+        })
     }
 
 
